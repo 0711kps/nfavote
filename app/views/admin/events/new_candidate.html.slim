@@ -1,0 +1,27 @@
+button#import-candidate.btn.btn-primary.btn-lg
+  i.icon.icon-upload
+  |由TXT檔匯入候選人
+form.form-horizontal#new-candidate-form
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="name"] 姓名
+    .col-7
+      input.form-input#name[type="text" placeholder="姓名" required]
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="unit"] 單位
+    .col-7
+      input.form-input#unit[type="text" placeholder="單位" required]
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="title"] 職稱
+    .col-7
+      input.form-input#title[type="text" placeholder="職稱" required]
+button.btn.btn-primary.btn-lg#create-candidate
+  i.icon.icon-arrow-down
+input#import-file-c[type="file" style="display: none"]
+#candidate-list
+button.btn.btn-primary.btn-lg#finish-event
+  |建立投票
+  i.icon.icon-check
+button.btn.btn-lg#quit-event 放棄新增

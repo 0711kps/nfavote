@@ -1,0 +1,46 @@
+form.form-horizontal#event-zone
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="title" title="標題"] 標題
+    .col-9
+      input.form-input#title[type="text" placeholder="標題" required title="標題"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="notice" title="投票須知"] 投票須知
+    .col-9
+      textarea.form-input#notice-field[placeholder="投票須知" style="resize: none" required title="投票須知"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="start" title="開始時間"] 開始時間
+    .col-2
+      input.form-input#start-year[type="number" placeholder="民國年"required title="年"]
+    .col-1
+      input.form-input#start-mon[type="number" placeholder="月" required title="月"]
+    .col-2
+      input.form-input#start-day[type="number" placeholder="日" required title="日"]
+    .col-2
+      input.form-input#start-hour[type="number" placeholder="時" required title="時"]
+    .col-2
+      input.form-input#start-min[type="number" placeholder="分" required title="分"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="dead" title="結束時間"] 結束時間
+    .col-2
+      input.form-input#end-year[type="number" placeholder="民國年" required title="年"]
+    .col-1
+      input.form-input#end-mon[type="number" placeholder="月" required title="月"]
+    .col-2
+      input.form-input#end-day[type="number" placeholder="日" required title="日"]
+    .col-2
+      input.form-input#end-hour[type="number" placeholder="時" required title="時"]
+    .col-2
+      input.form-input#end-min[type="number" placeholder="分" required title="分"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="amount" title="限投票數"] 限投票數
+    .col-9
+      input.form-input#amount[type="number" placeholder="可選人數(1-10)" default="1" required title="限投票數"]
+button.btn.btn-primary.btn-lg#add-voter.next[title="接著編輯投票人名單"]
+  |下一步
+  i.icon.icon-arrow-right[title="接著編輯投票人名單"]
+button.btn.btn-lg#cancel-event 放棄新增

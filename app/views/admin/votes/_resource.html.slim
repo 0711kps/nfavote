@@ -1,0 +1,12 @@
+p
+  center
+    label[style="font-size: 3.5vh;font-weight: 900;text-shadow: -1px 0px 1px white, 0px -1px 1px white, 1px 0px 1px white, 0px 1px 1px white"] ="硬碟使用率#{@disk_usage}%"
+  meter[min='0' max='100' high='70' value="#{@disk_usage}" style="width: 100vw"]
+p
+  center
+    label[style="font-size: 3.5vh;font-weight: 900;text-shadow: -1px 0px 1px white, 0px -1px 1px white, 1px 0px 1px white, 0px 1px 1px white"] ="記憶體使用率#{@ram_usage}%"
+  meter[min='0' max='100' high='70' value="#{@ram_usage}" style="width: 100vw"]
+p
+  center
+    label[style="font-size: 3.5vh;font-weight: 900;text-shadow: -1px 0px 1px white, 0px -1px 1px white, 1px 0px 1px white, 0px 1px 1px white"] ="處理器使用率#{@cpu_usage}%"
+  meter[min='0' max='100' high='70' value="#{@cpu_usage}" style="width: 100vw"]

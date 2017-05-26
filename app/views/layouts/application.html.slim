@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title
+      | 消防署投票網
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application', async: Rails.env.production?
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="author" content="https://github.com/0711kps"
+    meta name="description" content="投個票唄"
+    meta name="keywords" content="投票'消防署'神聖的一票'不如辦個署花選舉"
+    meta name="application-name" content="消防署人事室投票網站"
+  body
+    #header
+      svg#logo
+        use xlink:href="/svgs/custom.svg#bird"
+      #mask
+      h1.title [title="不過就是個標題，別在意"] 內政部消防署投票網
+      =render 'step',step: @step ||= 1
+    #main
+      = yield
+    = image_tag("see3small.png",id: "face")
+    span#sys_msg.label
+      i.icon.icon-message
+      span#sys_msg_content

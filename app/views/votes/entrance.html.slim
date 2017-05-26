@@ -1,0 +1,18 @@
+#votes-list
+  - @events[:current].each do |ev|
+    p
+      a.vote[data-evid="#{ev.id}" title="#{ev.notice}"] = ev.title
+    p
+      span.vote-time = ev.left_time
+    p
+      span
+        |已有
+        span.voted_count = ev.voted_count
+        |/
+        span.voters_count = ev.voters_count
+        |人投票
+  - @events[:incoming].each do |ev|
+    p
+      span.vote = ev.title
+    p
+      span.vote-time = ev.left_time

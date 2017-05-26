@@ -1,0 +1,5 @@
+.result-container
+  - @result.each do |r|
+    p.cname = "#{r.name}"
+    meter.nobreak value="#{r.votes_count}" max="#{@max}"
+    h1 = "#{r.votes_count}票"

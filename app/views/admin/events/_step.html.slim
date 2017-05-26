@@ -1,0 +1,13 @@
+ul.step
+  li class="step-item#{' active'if step == 1}"
+    a.tooltip href="#" data-tooltip="新增、刪除投票或查看完結投票結果！(´・ω・｀)"
+      | 投票列表
+  li class="step-item#{' active'if step == 2}"
+    a.tooltip href="#" data-tooltip="填寫投票標題、時間、票選人數！(´・ω・｀)"
+      | 新增投票
+  li class="step-item#{' active'if step == 3}"
+    a.tooltip href="#" data-tooltip="投過匯入TXT或手動方式編輯投票人列表！(´・ω・｀)"
+      | 新增投票人
+  li class="step-item#{' active'if step == 4}"
+    a.tooltip href="#" data-tooltip="投過匯入TXT或手動方式編輯候選人列表！(´・ω・｀)"
+      | 新增候選人

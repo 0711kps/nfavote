@@ -1,0 +1,17 @@
+input#add-candidate-filter.form-input[type="text" placeholder="用關鍵字篩選"]
+table.table
+  tr
+    th.sort-added-candidates 姓名
+    th.sort-added-candidates
+      |單位
+      i.icon.icon-arrow-down
+    th.sort-added-candidates 職稱
+    th 刪除
+  - @candidates.each do |c|
+    tr.added-candidate
+      td = c.name
+      td = c.unit
+      td = c.title
+      td
+        button.btn.btn-primary.del-candidate[data-candidate="#{c.id}"]
+          i.icon.icon-delete

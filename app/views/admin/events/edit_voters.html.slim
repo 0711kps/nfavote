@@ -1,0 +1,17 @@
+h2 = "編輯「#{@event.title}」的投票人清單"
+#new-voter-fields.edit
+  input.form-input.add-another-voter#edit-voter-name[type="text" placeholder="姓名" required]
+  input.form-input.add-another-voter#edit-voter-card[type="text" placeholder="身分證" required]
+  input.form-input.add-another-voter#edit-voter-birth[type="text" placeholder="生日" required]
+  button.btn.btn-lg.btn-primary.edit-create-new-voter 儲存
+#voter-list.container.edit
+  - @voters.each do |v|
+    .columns.col-gapless
+      .column.col-3 = v.name
+      .column.col-6 = v.card_id
+      .column.col-3
+        button.btn.btn-primary.del-voter[data-voter="#{v.id}"]
+          i.icon.icon-delete
+button.btn.btn-primary.update-voter
+  i.icon.icon-check
+  |關閉視窗

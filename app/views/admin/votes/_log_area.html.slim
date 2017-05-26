@@ -1,0 +1,22 @@
+p
+  center
+    mark[style="margin-top: 8vh"]
+      label[style="font-size: 3.5vh;font-weight: 900;text-shadow: -1px 0px 1px white, 0px -1px 1px white, 1px 0px 1px white, 0px 1px 1px white"] ="下載Log檔"
+  center
+    div[style="width: 80vw;height: 40vh;overflow-x: hidden;overflow-y: scroll;padding-top: 2vh"]
+      p
+        label.title[style="font-size: 2.5rem;font-weight: 900"] 0000
+        = link_to admin_download_log_path("0000"), class: "btn btn-lg btn-primary" do
+          i.icon.icon-download
+      hr
+      p
+        center
+      - if @files_count > 0
+        - (1..@files_count).each do |i|
+          p
+            - full_id = %x(printf "%04d" #{i})
+            - filename = full_id
+            label.title[style="font-size: 2.5rem;font-weight: 900"] = "#{filename}"
+            = link_to admin_download_log_path(full_id), class: "btn btn-lg btn-primary" do
+              i.icon.icon-download
+          hr

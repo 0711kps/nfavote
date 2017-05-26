@@ -1,0 +1,18 @@
+button#import-voter.btn.btn-primary.btn-lg
+  i.icon.icon-upload
+  |由TXT檔匯入投票人
+button#new-voter.btn.btn-lg
+  i.icon.icon-plus
+  |新增投票人
+#new-voter-fields
+  input.form-input.add-another-voter#voter-name[type="text" placeholder="姓名" required]
+  input.form-input.add-another-voter#voter-card[type="text" placeholder="身分證" required]
+  input.form-input.add-another-voter#voter-birth[type="text" placeholder="生日" required]
+  button.btn.btn-lg.btn-primary.create-new-voter 儲存
+  button.btn.btn-lg.btn-link.cancel-new-voter 取消
+input#import-file[type="file" style="display: none"]
+#voter-list.container
+button.btn.btn-primary.btn-lg#add-candidate.next
+  |下一步
+  i.icon.icon-arrow-right
+button.btn.btn-lg#quit-event 放棄新增

@@ -1,0 +1,24 @@
+div.candidates
+  input#candidate-filter.form-input[type="text" placeholder="用關鍵字篩選"]
+  table.table
+    tr
+      th.sort-candidates 姓名
+      th.sort-candidates
+        |組室
+        i.icon.icon-arrow-down
+      th.sort-candidates 職稱
+      th 投票欄
+    - candidates.each do |c|
+      tr.candidate data-cid="#{c.id}"
+        td = c.name
+        td = c.unit
+        td = c.title
+        td
+          svg width="2rem" height="2rem"
+            use xlink:href="/svgs/custom.svg#stamp"
+span#limit style="display: hidden" data-limit="#{limit}"
+h3#limit_hint
+  |尚可選擇
+  mark
+    = to_word limit
+  |名

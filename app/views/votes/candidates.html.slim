@@ -1,0 +1,9 @@
+h3.title[data-id="#{@vote_id}"] = "~ #{@vote_title} ~"
+= render "candidates_table", candidates: @candidates, limit: @current_event.limit_amount
+center
+  button.btn.disabled#voteit
+    |投下神聖的一票
+    i.icon.icon-forward
+= logout_btn
+= render "vote_notice", notice: @current_event.notice
+span#you-cant-see-me = @voter_name

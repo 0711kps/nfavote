@@ -1,0 +1,17 @@
+input#add-voter-filter.form-input[type="text" placeholder="用關鍵字篩選"]
+table.table
+  tr
+    th.sort-added-voters
+      |姓名
+      i.icon.icon-arrow-down
+    th.sort-added-voters 身份證
+    th.sort-added-voters 生日
+    th 刪除
+  - @voters.each do |v|
+    tr.voter
+      td = v.name
+      td = v.card_id
+      td = v.birthday
+      td
+        button.btn.btn-primary.del-voter[data-voter="#{v.id}"]
+          i.icon.icon-delete

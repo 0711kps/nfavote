@@ -1,0 +1,61 @@
+h2 = "編輯「#{@event.title}」的投票資訊"
+form.form-horizontal#event-zone.edit
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="title" title="標題"] 標題
+    .col-8
+      input.form-input#title[type="text" placeholder="標題" required value="#{@event.title}" title="標題" disabled]
+    .col-1
+      button.btn.btn-primary.edit-event-field.edit-event-title
+        i.icon.icon-edit[data-evid="#{@event.id}"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="notice" title="投票須知"] 投票須知
+    .col-8
+      textarea.form-input#notice-field[placeholder="投票須知" style="resize: none" required title="投票須知" disabled] = @event.notice
+    .col-1
+      button.btn.btn-primary.edit-event-field.edit-event-notice
+        i.icon.icon-edit[data-evid="#{@event.id}"]
+  .form-group
+    .col-2
+      label.form-label.event-field-label[for="start" title="開始時間"] 開始時間
+    .col-2
+      input.form-input.edit-start#start-year[type="number" placeholder="民國年" min="#{Time.now.year-1911}" required value="#{@event.startline.localtime.year-1911}" title="年" disabled]
+    .col-1
+      input.form-input.edit-start#start-mon[type="number" placeholder="月" min="1" max="12" required value="#{@event.startline.localtime.mon}" title="月" disabled]
+    .col-2
+      input.form-input.edit-start#start-day[type="number" placeholder="日" min="1" max="31" required value="#{@event.startline.localtime.day}" title="日" disabled]
+    .col-2
+      input.form-input.edit-start#start-hour[type="number" placeholder="時" min="0" max="23" required value="#{@event.startline.localtime.hour}" title="時" disabled]
+    .col-2
+      input.form-input.edit-start#start-min[type="number" placeholder="分" min="0" max="59" required value="#{@event.startline.localtime.min}" title="分" disabled]
+    .col-1
+      button.btn.btn-primary.edit-event-field.edit-event-start
+        i.icon.icon-edit[data-evid="#{@event.id}"]
+  .form-group
+    .col-2
+      label.form-label.event-field-label[for="dead" title="結束時間"] 結束時間
+    .col-2
+      input.form-input.edit-end#end-year[type="number" placeholder="民國年" min="#{Time.now.year-1911}" required value="#{@event.deadline.localtime.year-1911}" title="年" disabled]
+    .col-1
+      input.form-input.edit-end#end-mon[type="number" placeholder="月" min="1" max="12" required value="#{@event.deadline.localtime.mon}" title="月" disabled]
+    .col-2
+      input.form-input.edit-end#end-day[type="number" placeholder="日" min="1" max="31" required value="#{@event.deadline.localtime.day}" title="日" disabled]
+    .col-2
+      input.form-input.edit-end#end-hour[type="number" placeholder="時" min="0" max="23" required value="#{@event.deadline.localtime.hour}" title="時" disabled]
+    .col-2
+      input.form-input.edit-end#end-min[type="number" placeholder="分" min="0" max="59" required value="#{@event.deadline.localtime.min}" title="分" disabled]
+    .col-1
+      button.btn.btn-primary.edit-event-field.edit-event-end
+        i.icon.icon-edit[data-evid="#{@event.id}"]
+  .form-group
+    .col-3
+      label.form-label.event-field-label[for="amount" title="限投票數"] 限投票數
+    .col-8
+      input.form-input#amount[type="number" placeholder="可選人數(1-10)" min="1" max="10" default="1" required value="#{@event.limit_amount}" title="限投票數" disabled]
+    .col-1
+      button.btn.btn-primary.edit-event-field.edit-event-amount
+        i.icon.icon-edit[data-evid="#{@event.id}"]
+button.btn.btn-primary.update-event
+  i.icon.icon-check
+  |關閉視窗

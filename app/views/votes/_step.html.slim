@@ -1,0 +1,13 @@
+ul.step
+  li class="step-item#{' active'if step == 1}"
+    a.tooltip href="#" data-tooltip="選擇要參與的投票活動，小心不要走錯了(´・ω・｀)"
+      |進入投票所
+  li class="step-item#{' active'if step == 2}"
+    a.tooltip href="#" data-tooltip="輸入帳號密碼，按下按鈕或Enter可以登入哦！(´・ω・｀)"
+      | 驗明正身
+  li class="step-item#{' active'if step == 3}"
+    a.tooltip href="#" data-tooltip="勾選對象後按按鈕送出你的選票哦！不要投廢票哦！(´・ω・｀)"
+      | 選擇欲投票之對象
+  li class="step-item#{' active'if step == 4}"
+    a.tooltip href="#" data-tooltip="這樣就可以了哦！謝謝你神聖的一票！(´・ω・｀)"
+      | 完成投票

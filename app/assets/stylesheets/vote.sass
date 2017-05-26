@@ -1,0 +1,647 @@
+@font-face
+  font-family: 'FYXHZ'
+  src: font-url('FYXHZ.ttf')
+@font-face
+  font-family: 'TLMT'
+  src: font-url('TLMT.ttf')
+body
+  transition: opacity 500ms
+  button,label
+    font-family: TLMT, FYXHZ, sans-serif
+  .btn.btn-lg,.btn.btn-primary,.btn.btn-link,.btn
+    font-size: 2rem
+.invisible
+  display: none
+#face
+  position: fixed
+  transition: transform 2s
+  left: 100vw
+  &.changing
+    transform: translateX(-80%)
+#sys_msg
+  z-index: 10
+  position: fixed
+  bottom: 0
+  left: 50vw
+  transform: translate(-50%,100%)
+  font-size: 3rem
+  padding: 1rem 1.5rem
+  border-radius: 5px
+  transition: transform 500ms cubic-bezier(.74,.32,.53,1.75)
+  user-select: none
+  cursor: default
+  font-family: TLMT,FYXHZ,sans-serif
+  i
+    margin-right: 1rem
+  &.visible
+    transform: translate(-50%,0)
+#you-cant-see-me
+  display: none
+input.form-input::placeholder
+  color: #999
+  font-size: 2vh
+.strong
+  font-weight: 900
+#main
+  transition: opacity 500ms ease-in-out, transform 200ms
+  &.changing
+    transform: scale(1.2) rotate(10deg)
+#votes-list
+  width: 80vw
+  margin-left: 10vw
+  height: 60vh
+  margin-top: 10vh
+  padding-top: 1rem
+  overflow-y: scroll
+  p
+    a
+      cursor: pointer
+    .vote
+      font-size: 5rem
+      user-select: none
+    .vote-time
+      font-size: 2rem
+      font-weight: 600
+      user-select: none
+    .voted_count
+      color: red
+      font-weight: 900
+    .voters_count
+      color: black
+      font-weight: 900
+.fade-out
+  opacity: 0
+#logo
+  position: fixed
+  width: 80vw
+  height: 80vh
+  top: 10vh
+  left: 10vw
+  z-index: -1
+#back-to-entrance
+  position: fixed
+  left: 0
+  bottom: 0
+#logout
+  position: fixed
+  left: 0
+  bottom: 0
+#mask
+  position: fixed
+  width: 98vw
+  height: 96vh
+  background-color: rgba(255,255,255,.8)
+  z-index: -1
+.title
+  text-align: center
+  user-select: none
+  cursor: default
+  font-family: TLMT,FYXHZ,sans-serif
+h1.title
+  &.something-happen
+    transition: color 1s, transform 1s
+    color: red
+    transform: scale(1.5)
+.step>.step-item
+  &>.tooltip::after
+    max-width: 48rem
+    font-size: 2rem
+  &>a
+    color: rgba(80,80,200,.8)
+    font-size: 2.5rem
+    user-select: none
+    cursor: default
+    font-family: TLMT,FYXHZ,sans-serif
+  &.active
+    &>a
+      color: rgba(50,50,150,.8)
+      font-weight: 900
+      font-size: 3rem
+    &~.step-item
+      &::before
+        background: rgba(30,30,30,.3)
+      &>a
+        color: #aaa
+        font-size: 2.5rem
+        &::before
+          background: #aaa
+          border: .2rem solid white
+.form-label
+  user-select: none
+  text-align: center
+  font-size: 6rem
+  letter-spacing: 3rem
+.form-input
+  text-align: center
+  letter-spacing: 1.5rem
+  font-weight: 900
+  &::placeholder
+    text-align: center
+    user-select: none
+table.table
+  width: 90vw
+  th
+    user-select: none
+    background-repeat: no-repeat
+    background-position: center
+    text-align: center
+    color: rgb(220,150,140)
+    font-weight: 900
+    font-size: 3.5rem
+    letter-spacing: 0.5rem
+    cursor: pointer
+    &:last-of-type
+      cursor: default
+.candidates
+  width: 90vw
+  height: 50vh
+  transform: translateX(5vw)
+  overflow-y: scroll
+  overflow-x: hidden
+  table.table
+    tr
+      td
+        text-align: center
+        font-size: 2.5rem
+        font-weight: 600
+        letter-spacing: 0.5rem
+        cursor: pointer
+        user-select: none
+        &>svg
+          opacity: 0
+      &:hover>td>svg
+        opacity: .3
+      &.chosen
+        background-color: rgba(250,150,140,.5)
+        &>td>svg
+          opacity: 1
+#limit_hint
+  text-align: center
+  transform: translateY(6vh)
+#notice
+  width: 100vw
+  height: 100vh
+  vertical-align: middle
+  text-align: center
+  position: fixed
+  left: 50vw
+  top: 50vh
+  transform: translate(-50%,-50%)
+  background-color: rgba(10,10,10,.9)
+  font-size: 2rem
+  z-index: 9
+  user-select: none
+  cursor: default
+  transition: opacity 500ms ease-in-out
+  color: rgb(180,180,180)
+  #notice-text
+    text-align: left
+    margin-left: 50vw
+    margin-top: 50vh
+    transform: translate(-50%,-50%)
+  p
+    line-height: 4rem
+    overflow-y: scroll
+    height: 40vh
+#ok_mom_i_will
+  position: fixed
+  left: 50vw
+  bottom: 10vh
+  transform: translateX(-50%)
+::-webkit-scrollbar
+  width: 12px
+::-webkit-scrollbar-track
+  box-shadow: inset 0 0 10px white
+  border-radius: 10px
+  background-color: #77b
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+  box-shadow: inset 0 0 15px #33f
+  background-color: #88d
+#voteit
+  position: fixed
+  bottom: 0
+  left: 50vw
+  transform: translateX(-50%)
+#thx
+  &>p
+    font-size: 10rem
+    line-height: 10rem
+    margin-top: 40vh
+    transform: translateY(-50%)
+.module
+  width: 49vw
+  height: 80vh
+  background-size: cover
+  font-size: 16rem
+  display: inline-block
+  cursor: pointer
+  text-align: center
+  overflow: hidden
+  color: black
+  vertical-align: middle
+  text-shadow: -8px -8px 8px white, 8px 8px 8px white, 10px -10px 10px white, -10px 10px 10px white
+  border-radius: 50px
+  transition: transform 200ms
+  transform: scale(1)
+  font-family: TLMT, FYXHZ, sans-serif
+  &.changing
+    transform: scale(1.2)
+  &:after
+    content: ''
+    display: block
+    line-height: 80vh
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position-x: 50%
+  &#permission-module
+    &:after
+      background-image: image-url('permission_bg.jpg')
+      content: '權限管理'
+  &#vote-module
+    &:after
+      background-image: image-url('vote_bg.jpg')
+      content: '投票管理'
+#admin-out
+  position: fixed
+  left: 0
+  bottom: 0
+.cname
+  font-size: 4rem
+  text-align: center
+  letter-spacing: 1rem
+.result-container
+  border-radius: 5px
+  padding-top: 1rem
+  overflow-y: auto
+  width: 39vw
+  height: 28vh
+  border: 1px solid #666
+  meter
+    width: 70%
+    height: 4rem
+    &::-webkit-meter-optimum-value
+      background: linear-gradient(to right, rgba(130,130,220,.4),rgb(100,100,200),rgb(130,130,220))
+      border-top-right-radius: 20px
+      border-bottom-right-radius: 20px
+    &::-webkit-meter-bar
+      background: transparent
+    &+h1
+      display: inline-block
+      color: white
+      text-shadow: 0px 1px 5px black
+      position: relative
+      right: 100%
+      transform: translate(28.5vw,-.3rem)
+#to-sysrc
+  position: fixed
+  bottom: 0
+  right: 0
+  opacity: 0
+  cursor: default
+  &:hover
+    transition: opacity 2s
+    transition-delay: 1s
+    opacity: 1
+#to-menu
+  position: fixed
+  bottom: 0
+  left: 0
+.event
+  height: 5rem
+  .event-type
+    letter-spacing: 2rem
+  .event-title
+    margin-right: 1rem
+    cursor: default
+    user-select: none
+    display: inline-block
+  .votecount
+    margin: 0 .2rem
+    user-select: none
+    cursor: pointer
+    opacity: 0
+    transition: opacity 200ms
+  &:hover>.votecount
+    opacity: 1
+  .event-action
+    margin: 0 .2rem
+    user-select: none
+    cursor: pointer
+    opacity: 0
+    transition: opacity 200ms
+  &:hover>.event-action
+    opacity: 1
+.alert-box
+  z-index: 1
+  user-select: none
+  cursor: default
+  background: linear-gradient(15deg, rgb(100,100,150),rgb(180,210,230),transparent,rgb(180,210,230),rgb(100,100,150))
+  padding: 0.5rem
+  border-radius: 5px
+  width: 40vw
+  position: fixed
+  left: 50vw
+  top: 50vh
+  color: black
+  box-shadow: 0px -10px 10px #666,10px 0px 10px #666,0px 10px 10px #666,-10px 0px 10px #666
+  text-shadow: 0px -1px 5px white, 1px 1px 5px white
+  font-size: 2rem
+  transition: transform 500ms
+  transform-origin: left top
+  transform: scale(0) translate(-50%,-50%)
+  &.active
+    transform: scale(1) translate(-50%,-50%)
+  .alert-content
+    background-color: #eeeeee
+    padding: 1rem
+    border: 1px solid #666
+    #response
+      width: fit-content
+      float: right
+      transform: translateY(-2rem)
+      .del-yes
+        padding: 0 2rem
+        margin-right: 1rem
+        margin-top: -1rem
+      .del-no
+        padding: 0 2rem
+        margin-top: -1rem
+    .delete-sign
+      background-image: image-url('del_vote.jpg')
+      background-size: cover
+      border-radius: 20px
+      width: 10vw
+      height: 8vw
+      margin-top: 1rem
+    .target-info
+      transform: translate(12vw,-8vw)
+.edit-box
+  max-height: 60vh
+  overflow-y: scroll
+  position: fixed
+  transition: transform 500ms
+  transform: scale(0) translate(-50%,-50%)
+  left: 50vw
+  top: 50vh
+  padding: 1rem
+  background: linear-gradient(15deg, skyblue, #ccffcc)
+  border-radius: 10px
+  transform-origin: 0% 0%
+  z-index: 1
+  box-shadow: 0px -10px 10px #666,10px 0px 10px #666,0px 10px 10px #666,-10px 0px 10px #666
+  h2
+    user-select: none
+    cursor: default
+    max-width: 40vw
+  .update-event
+    margin-left: 50%
+    transform: translateX(-50%)
+  .update-voter
+    margin-left: 50%
+    transform: translateX(-50%)
+  .update-candidate
+    margin-left: 50%
+    transform: translateX(-50%)
+  .quit-edit-event
+    margin-left: 10%
+  &.active
+    transform: scale(1) translate(-50%,-50%)
+.statistic
+  font-size: 2rem
+  cursor: default
+  color: black
+  border-radius: 5px
+  user-select: none
+  position: fixed
+  left: 30vw
+  top: 30vh
+  transform-origin: center center
+  transition: transform 300ms
+  transform: scale(0)
+  padding: 0.5rem
+  background: linear-gradient(15deg, rgb(100,100,150),rgb(180,210,230),transparent,rgb(180,210,230),rgb(100,100,150))
+  box-shadow: 0px -10px 10px #666,10px 0px 10px #666,0px 10px 10px #666,-10px 0px 10px #666
+  text-shadow: 0px -1px 5px white, 1px 1px 5px white
+  .content
+    border-radius: 10px
+    border: 1px solid #666
+    background-color: #eee
+    width: 40vw
+    height: 40vh
+    padding: 1rem
+  .ok
+    position: relative
+    padding: 0 2rem
+    font-size: 2rem
+    left: 20vw
+    transform: translate(-50%,-150%)
+  &.active
+    transform: scale(1)
+#account,#passwd,#admin_account,#admin_passwd
+  transition: none
+  width: 40%
+  margin-left: 30%
+.permission-list
+  position: fixed
+  left: 50vw
+  width: 45vw
+  height: 40vh
+  transform: translateX(-50%)
+  z-index: -1
+  background-color: #ccc
+  overflow-y: scroll
+  button
+    float: right
+  .record
+    font-size: 2rem
+    display: block
+    width: fit-content
+    line-height: 3rem
+    button
+      float: none
+    span
+      margin-right: 3rem
+  #adminlist-zone
+    width: 36vw
+    margin-bottom: -3rem
+    transform: scale(0)
+    transition: transform 200ms, margin-bottom 200ms
+    input
+      letter-spacing: 0
+    input#account-field
+      width: 10vw
+      margin-right: 1rem
+      display: inline-block
+    input#passwd-field
+      width: 10vw
+      margin-right: 7vw
+      display: inline-block
+    .save-admin
+      float: none
+    .cancel-admin
+      float: none
+    &.active
+      transform: scale(1)
+      margin-bottom: 0
+  &.active
+    z-index: 1
+  &#adminlist>.permission-label
+    cursor: pointer
+    position: absolute
+    transform: translate(100%,-100%)
+.permission-label
+  background: linear-gradient(45deg, #aaf, #fff, #77b)
+  position: relative
+  width: 45vw
+  text-align: center
+  transform: translateX(27.5vw)
+  cursor: pointer
+  height: 3rem
+  font-size: 2rem
+  border-top-left-radius: 50px
+  border-top-right-radius: 50px
+  transition: border-top-left-radius 500ms, border-top-right-radius 500ms
+  &:hover
+    border-top-left-radius: 100%
+    border-top-right-radius: 100%
+#voter-list
+  color: #50596c
+  font-weight: 900
+  user-select: none
+  width: 78vw
+  height: 70vh
+  margin-top: 1rem
+  margin-left: 10vw
+  overflow-y: scroll
+  &.edit
+    width: 40vw
+    max-height: 40vh
+    margin: 0
+    cursor: default
+    padding: 0
+  &.fade-out
+    opacity: 0
+  table.table
+    width: 80vw
+    th
+      font-size: 2.5rem
+    td
+      font-size: 2rem
+      text-align: center
+.next
+  position: fixed
+  right: 0
+  bottom: 0
+#new-voter
+  margin-right: 9rem
+#quit-event
+  position: fixed
+  left: 0
+  bottom: 0
+#finish-event
+  position: fixed
+  right: 0
+  bottom: 0
+#cancel-event
+  position: fixed
+  left: 0
+  bottom: 0
+#import-voter.edit
+  margin: 0
+#import-candidate.edit
+  margin-left: 50%
+  transform: translateX(-50%)
+#edit-create-candidate
+  margin-left: 50%
+#new-voter-fields
+  display: inline-block
+  transform: scale(0)
+  transition: transform 200ms
+  &.edit
+    transform: scale(1)
+    input
+      letter-spacing: 0
+      width: 10rem
+      margin: 0.5rem
+  &.active
+    transform: scale(1)
+  .add-another-voter
+    width: 20rem
+    display: inline-block
+    &[type="text"]
+      border-style: none none solid none
+      background-color: rgba(200,200,250,.3)
+      color: black
+      &:valid
+    margin: 0 1rem
+    &:nth-of-type(3)
+      margin-right: 3rem
+#create-event
+  position: fixed
+  right: 0
+  bottom: 0
+#new-candidate-form
+  width: 60vw
+  margin-left: 20vw
+  &.edit
+    width: 40vw
+    margin: 0
+#new-event-form
+  width: 80vw
+  margin-left: 10vw
+#name.form-select
+  transition: background-color 250ms
+  &.changing
+    background-color: #aaf
+.event-field-label
+  font-size: 2rem
+  font-weight: 900
+  text-align: center
+#event-zone
+  width: 80vw
+  margin-left: 10vw
+  .form-group
+    margin-bottom: 4vh
+  &.edit
+    width: 60vw
+    background-color: #eeeeee
+    border-radius: 20px
+    padding-right: 5vw
+    margin: 0
+    label
+      letter-spacing: 0
+#notice-field
+  text-align: left
+  padding-left: 2rem
+  height: 30vh
+#create-candidate
+  margin-left: 50vw
+  transform: translateX(-50%)
+#candidate-list
+  width: 80vw
+  height: 20vh
+  margin-left: 10vw
+  margin-top: 5vh
+  overflow-y: scroll
+  &.edit
+    width: 35vw
+    margin: 0 0 0 5vw
+    .columns
+      user-select: none
+      cursor: default
+      color: #50596c
+      font-weight: 900
+      &:hover
+        background: linear-gradient(15deg, skyblue, transparent, skyblue)
+      .column
+        cursor: default
+  table.table
+    width: 78vw
+    th
+      font-size: 2.5rem
+    td
+      font-size: 2rem
+      text-align: center

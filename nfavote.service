@@ -1,0 +1,9 @@
+[Unit]
+Description=NFAVOTE
+
+[Service]
+ExecStart=/bin/bash -c "cd /home/[:username]/nfavote;/home/[:username]/.rbenv/shims/passenger start --port 80 -a [:server_ip] -e production"
+ExecStop=/bin/bash -c "killall nginx"
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+span.to-admin.label.permission-label[data-menu="admin"] 管理者帳號
+div#adminlist.permission-list
+  button.btn.btn-lg.add-admin
+    i.icon.icon-plus
+    |新增管理者
+  #adminlist-zone
+    input.form-input#account-field[type="text" placeholder="帳號"]
+    input.form-input#passwd-field[type="password" placeholder="密碼"]
+    button.btn.btn-primary.save-admin 儲存
+    button.btn.btn-link.cancel-admin 取消
+  - @admins.each do |a|
+    .record
+      span
+        = a.account
+      button.btn.btn-primary.del-admin[data-admin="#{a.id}"]
+        i.icon.icon-delete
+button.btn.btn-lg#to-menu 返回主選單

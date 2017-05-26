@@ -1,0 +1,74 @@
+button.btn.btn-primary.btn-lg#add-event[title="從頭新增一個投票，放心，不會很難"]
+  i.icon.icon-plus[title="從頭新增一個投票，放心，不會很難"]
+  |新增投票
+table.table
+  h5.title.strong.event-type[title="還沒開始投票的活動放這裡哦！"] 未開始
+  hr
+  - @events[:incoming].each do |ev|
+    .event
+      h3.event-title[title="#{ev.notice}" data-evid="#{ev.id}"] = ev.title
+      button.btn.btn-primary.btn-lg.event-action.delete[data-title="#{ev.title}" data-startline="#{tw_time ev.startline}" data-deadline="#{tw_time ev.deadline}" data-tid="#{ev.id}" title="刪除 「#{ev.title}」"]
+        i.icon.icon-delete[title="刪除 「#{ev.title}」"]
+        |刪除投票
+      button.btn.btn-primary.btn-lg.event-action.edit-event
+        i.icon.icon-edit[data-evid="#{ev.id}"]
+        |編輯投票資訊
+      button.btn.btn-primary.btn-lg.event-action.edit-voter
+        i.icon.icon-edit[data-evid="#{ev.id}"]
+        |編輯投票人清單
+      button.btn.btn-primary.btn-lg.event-action.edit-candidate
+        i.icon.icon-edit[data-evid="#{ev.id}"]
+        |編輯候選人清單
+  h5.title.strong.event-type[title="這裡放現在進行式的投票活動"] 進行中
+  hr
+  - @events[:current].each do |ev|
+    .event
+      h3.event-title[title="#{ev.notice}" data-evid="#{ev.id}"] = ev.title
+      button.btn.btn-primary.btn-lg.event-action.delete[data-title="#{ev.title}" data-startline="#{tw_time ev.startline}" data-deadline="#{tw_time ev.deadline}" data-tid="#{ev.id}" title="刪除 「#{ev.title}」"]
+        i.icon.icon-delete[title="刪除 「#{ev.title}」"]
+        |刪除投票
+  h5.title.strong.event-type[title="這兒的投票已經結束啦"] 已完結
+  hr
+  - @events[:ended].each do |ev|
+    .event
+      h3.event-title[title="#{ev.notice}" data-evid="#{ev.id}"] = ev.title
+      button.btn.btn-primary.btn-lg.event-action.delete[data-title="#{ev.title}" data-startline="#{tw_time ev.startline}" data-deadline="#{tw_time ev.deadline}" data-tid="#{ev.id}" title="刪除 「#{ev.title}」"]
+        i.icon.icon-delete[title="刪除 「#{ev.title}」"]
+        |刪除投票
+      button.btn.btn-primary.btn-lg.event-action.votecount[data-tid="#{ev.id}" title="看看是誰當選了吧!"]
+        i.icon.icon-search[title="看看是誰當選了吧!"]
+        |投票結果
+.alert-box
+  |刪除投票
+  .alert-content
+    |移除投票將連帶移除
+    br
+    |投票人
+    br
+    |候選人
+    br
+    |投票結果
+    br
+    |等資訊
+    br
+    |且無法復原
+    br
+    |真的要刪除嗎？Seriously？
+    .delete-sign
+    .target-info
+      span.del-title
+      br
+      |開始時間: 
+      span.del-startline
+      br
+      |截止時間: 
+      span.del-deadline
+    #response      
+      button.del-yes.btn.btn-primary 是
+      button.del-no.btn 否
+.edit-box
+.statistic
+  |投票結果
+  .content
+  button.ok.btn.btn-primary 哦好
+button.btn.btn-lg#to-menu 返回主選單

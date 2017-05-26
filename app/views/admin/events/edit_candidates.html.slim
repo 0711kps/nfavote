@@ -1,0 +1,31 @@
+h2 = "編輯 「#{@event.title}」的候選人清單"
+form.form-horizontal#new-candidate-form.edit
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="name"] 姓名
+    .col-7
+      input.form-input#edit-name[type="text" placeholder="姓名" required]
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="unit"] 單位
+    .col-7
+      input.form-input#edit-unit[type="text" placeholder="單位" required]
+  .form-group
+    .col-5
+      label.form-label.event-field-label[for="title"] 職稱
+    .col-7
+      input.form-input#edit-title[type="text" placeholder="職稱" required]
+button.btn.btn-primary.btn-lg#edit-create-candidate.edit
+  i.icon.icon-arrow-down[data-evid="#{@event.id}"]
+#candidate-list.edit
+  - @candidates.each do |c|
+    .columns.col-gapless.added-candidate
+      .column.col-3 = c.name
+      .column.col-4 = c.unit
+      .column.col-4 = c.title
+      .column.col-1
+        button.btn.btn-primary.del-candidate[data-candidate="#{c.id}"]
+          i.icon.icon-delete
+button.btn.btn-primary.update-candidate
+  i.icon.icon-check
+  |關閉視窗

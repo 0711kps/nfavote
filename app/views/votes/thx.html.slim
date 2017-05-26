@@ -1,0 +1,5 @@
+h3.title = "~ #{@vote_title} ~"
+center#thx
+  = simple_format "#{tw_time @deadline}\n結果揭曉！"
+= logout_btn
+span#you-cant-see-me = @voter_name
