@@ -50,9 +50,9 @@ cd ~/.rbenv && src/configure && make -C src && cd
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-ruby_version='2.4.1'
-rails_version='5.1.0'
-passenger_version="5.1.6"
+ruby_version='2.4.2'
+rails_version='5.1.4'
+passenger_version="5.1.11"
 .rbenv/bin/rbenv install "$ruby_version"
 .rbenv/bin/rbenv global "$ruby_version"
 .rbenv/bin/rbenv local "$ruby_version"
